@@ -28,13 +28,13 @@ const Navbar = () => {
                         <Link to="hero" spy={true} smooth={true} offset={-100} duration={500} onClick={closeMenu}>Home</Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="about" spy={true} smooth={true} offset={-100} duration={500} onClick={closeMenu}>About</Link>
+                        <Link to="about" spy={true} smooth={true} offset={-100} duration={500} onClick={closeMenu}>Sobre nós</Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="testimonials" spy={true} smooth={true} offset={-100} duration={500} onClick={closeMenu}>Testimonials</Link>
+                        <Link to="testimonials" spy={true} smooth={true} offset={-100} duration={500} onClick={closeMenu}>Testemunhos</Link>
                     </li>
                     <li className='nav-item'>
-                        <Link to="demo" spy={true} smooth={true} offset={-100} duration={500} onClick={closeMenu}>Demo</Link>
+                        <Link to="demo" spy={true} smooth={true} offset={-100} duration={500} onClick={closeMenu}>Contato</Link>
                     </li>
                 </ul>
             </nav>

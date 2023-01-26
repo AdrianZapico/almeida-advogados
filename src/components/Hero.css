@@ -50,15 +50,20 @@
 .hero .button {
     margin: 1rem 0;
     width: 300px;
-    background-color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
+    background-color: rgb(78, 210, 78);
+    
     color: #333;
 }
 
 .hero .button:hover {
-    background-color: var(--secondary-dark);
-    border: 1px solid var(--secondary-dark);
+    background-color: rgb(141, 202, 141);
+   
 }
+.hero .button:active {
+    background-color: rgb(77, 146, 77);
+   
+}
+
 
 @media screen and (max-width:940px) {
     .hero .content p:nth-child(3) {
