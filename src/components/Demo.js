@@ -1,18 +1,30 @@
 import React from 'react'
 import './Demo.css'
+import {AiOutlineInstagram, AiOutlineFacebook, AiOutlineWhatsApp, AiOutlineYoutube} from 'react-icons/ai'
+
 
 const Demo = () => {
     return (
         <div className='demo' id='demo'>
             <div className='container'>
                 <div className='col-1'>
-                    <p>More Than 100 Financial Planners,</p>
-                    <p>One Philosophy</p>
-                    <p>Every single one of our financial advisors receives rigorous training according to John Doe’s philosophy based on academic research (including that of a Nobel laureate in Economics) and Behavioral Finance.</p>
-                    <button className='button'>Get your free financial analysis</button>
+                    <p>Mais de 100 clientes satisfeitos</p>
+                    <p>Uma Filosofia...</p>
+                    <p>Cada um de nossos clientes recebe o melhor atendimento de acordo com a filosofia da CHAGAS&ALMEIDA. Você, nosso futuro cliente é nossa prioridade!</p>
+                    <button className='button'>Venha fazer uma consulta!</button>
+                
+                <div className="social-icons">
+                   
+                    <AiOutlineInstagram size={30} color='#C13584' style={{margin:'20px'}}/>
+                    <AiOutlineFacebook size={30} color='blue' style={{margin:'20px'}}/>
+                    <AiOutlineWhatsApp size={30} color='green' style={{margin:'20px'}}/>
+                    <AiOutlineYoutube size={30} color='red' style={{margin:'20px'}}/>
+
+                </div>
                 </div>
                 <div className='col-2'>
-                    <iframe width='570' height='320' src='https://www.youtube.com/embed/oeqP5JtihMA' title='Youtube video player' frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                    
+                    {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.8070818229685!2d-43.80928340968138!3d-19.89036644174075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa69d4096409f07%3A0x3aa2f82ad6b68569!2sR.%20do%20Carmo%2C%204%20-%20Centro%2C%20Sabar%C3%A1%20-%20MG%2C%2034505-460!5e0!3m2!1spt-PT!2sbr!4v1677754008216!5m2!1spt-PT!2sbr" title='Youtube video player' width='570' height='320' style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> */}
                 </div>
             </div>
         </div>

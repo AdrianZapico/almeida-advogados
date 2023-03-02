@@ -38,6 +38,11 @@
     margin: auto;
 }
 
+.social-icons{
+    display: flex;
+    justify-content: center;
+    
+}
 
 @media screen and (max-width: 940px) {
     .demo .container {
