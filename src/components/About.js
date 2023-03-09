@@ -1,5 +1,5 @@
 import React from 'react'
-import john from './images/background.png'
+import chagas from '../components/images/chagas.png'
 import './About.css'
 
 const About = () => {
@@ -11,7 +11,7 @@ const About = () => {
     return (
         <div className='about' id='about'>
             <div className='container'>
-                <img src={john} alt='john' />
+                <img src= {chagas} alt='john' />
                 <div className='col-2'>
                     <h2>Sobre nós</h2>
                     <span className='line'></span>

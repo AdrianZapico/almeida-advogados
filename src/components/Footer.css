@@ -3,6 +3,7 @@
     background-color: #000;
     color: #eee;
     padding: 3rem 1rem;
+    cursor: pointer;
 }
 
 .footer .container {
