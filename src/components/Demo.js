@@ -1,9 +1,71 @@
-import React from 'react'
+import React,{ useRef, useState } from 'react'
 import './Demo.css'
 import { AiOutlineInstagram, AiOutlineFacebook, AiOutlineWhatsApp, AiOutlineYoutube } from 'react-icons/ai'
 import Iframe from 'react-iframe'
+import emailjs from "@emailjs/browser";
+
+//Z7c6Q-0jac59XLisC
+//template_3hw6ila
+//service_rw7hjfc
+
 
 const Demo = () => {
+    
+    const formRef = useRef();
+    const [form, setForm] = useState({
+      name: "",
+      email: "",
+      message: "",
+    });
+  
+    const [loading, setLoading] = useState(false);
+  
+    const handleChange = (e) => {
+      const { target } = e;
+      const { name, value } = target;
+  
+      setForm({
+        ...form,
+        [name]: value,
+      });
+    };
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      setLoading(true);
+  
+      emailjs
+        .send(
+         "service_rw7hjfc",
+          "template_3hw6ila",
+          {
+            from_name: form.name,
+            to_name: "Chagas Almeida",
+            from_email: form.email,
+            to_email: "chagasalmeidadevelop@gmail.com",
+            message: form.message,
+          },
+          "Z7c6Q-0jac59XLisC"
+        )
+        .then(
+          () => {
+            setLoading(false);
+            alert("Thank you. I will get back to you as soon as possible.");
+  
+            setForm({
+              name: "",
+              email: "",
+              message: "",
+            });
+          },
+          (error) => {
+            setLoading(false);
+            console.error(error);
+  
+            alert("Ahh, something went wrong. Please try again.");
+          }
+        );
+    };
     
     
     return (
@@ -35,7 +97,71 @@ const Demo = () => {
                         display="block"
                         position="relative" />
                 </div>
+            
+                <div
+     id="form-main"
+    >
+    <div id="form-div">
+        
+
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className="form" id="form1"
+        >
+        <p className="name">
+          <label >
+            <span >Nome</span>
+            <input
+              type='text'
+              name='name'
+              value={form.name}
+              onChange={handleChange}
+              placeholder="Seu nome..."
+              className="validate[required,custom[onlyLetter],length[0,100]] feedback-input" id="name"              
+          />
+          </label>
+          </p>
+          <p className="email">
+          <label >
+            <span >Email</span>
+            <input
+              type='email'
+              name='email'
+              value={form.email}
+              onChange={handleChange}
+              placeholder="Email..."
+              className="validate[required,custom[email]] feedback-input" id="email"
+           />
+          </label>
+          </p>
+          <label >
+            <span >Mensagem</span>
+            <textarea
+              rows={7}
+              name='message'
+              value={form.message}
+              onChange={handleChange}
+              placeholder='Conte aqui do que precisa...'
+              className="validate[required,length[6,300]] feedback-input" id="comment" 
+            />
+          </label>
+
+          <button
+            type='submit'
+            className='button' 
+          >
+            {loading ? "Enviando..." : "Enviar"}
+          </button>
+        </form>
+
+      
+        
+     
+    </div>
+    </div>
             </div>
+
         </div>
     )
 }
